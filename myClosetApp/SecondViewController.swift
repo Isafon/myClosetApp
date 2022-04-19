@@ -10,9 +10,20 @@ import UIKit
 class SecondViewController: UIViewController {
 
  
+    @IBOutlet weak var storedImage: UIImageView!
+    
+    var myNewImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        storedImage.image = myNewImage
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

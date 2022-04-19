@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -23,18 +25,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
-    
+
     
     @IBOutlet weak var newImageView: UIImageView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "mySegue" {
+        let svc = segue.destination as! SecondViewController
+            if let image myNewImage = newImageView {
+            svc.myNewImage = image
+            }
+            
+        }
+
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        myOutfitsButton.isEnabled = false
     }
+    
+    @IBOutlet weak var myOutfitsButton: UIButton!
+    
+  //  var outfitButton = UIButton!
+    
     
     @IBAction func onUploadButtonTapped(_ sender: UIButton) {
         let vc = UIImagePickerController()
@@ -44,6 +61,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         present(vc, animated: true)
         
     }
+  //  myOutfitsButton.isEnabled = true
+    
+        @IBAction func onMyOutfitButtonTap(_ sender: AnyObject) { performSegue(withIdentifier: "mySegue", sender: nil)
+        }
+        
+    
     
 }
     
