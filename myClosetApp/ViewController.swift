@@ -31,21 +31,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "mySegue" {
         let svc = segue.destination as! SecondViewController
-            if let image myNewImage = newImageView {
-            svc.myNewImage = image
-            }
-            
-        }
-
+        
+       
+            svc.newImage = newImageView.image
+        
+        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        myOutfitsButton.isEnabled = false
+        myOutfitsButton.isEnabled = true
     }
     
     @IBOutlet weak var myOutfitsButton: UIButton!
@@ -63,9 +60,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
   //  myOutfitsButton.isEnabled = true
     
-        @IBAction func onMyOutfitButtonTap(_ sender: AnyObject) { performSegue(withIdentifier: "mySegue", sender: nil)
-        }
+    @IBAction func onMyOutfitButtonTap(_ sender: AnyObject) { performSegue(withIdentifier: "mySegue", sender: nil)
         
+    }
     
     
 }
