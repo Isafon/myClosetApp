@@ -7,7 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+    }
+    
     
     
     
@@ -34,10 +46,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         let svc = segue.destination as! SecondViewController
         
        
-            svc.newImage = newImageView.image
+        svc.newImage.image = newImageView.image
         
         
     }
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

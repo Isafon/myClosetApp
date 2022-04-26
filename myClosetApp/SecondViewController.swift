@@ -12,12 +12,12 @@ class SecondViewController: UIViewController {
  
     @IBOutlet weak var storedImage: UIImageView!
     
-    var newImage: UIImage!
+    var newImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storedImage.image = newImage
+        storedImage.image = newImage.image
         
         
         
